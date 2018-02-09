@@ -17,7 +17,7 @@ export class MenuContentGesture extends SlideEdgeGesture {
     domCtrl: DomController,
   ) {
     super(plt, plt.doc().body, {
-      direction: 'x',
+      direction: 'y',
       edge: menu.side,
       threshold: 5,
       maxEdgeStart: menu.maxEdgeStart || 50,

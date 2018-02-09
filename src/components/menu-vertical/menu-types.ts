@@ -154,7 +154,7 @@ class MenuOverlayType extends MenuType {
     }
 
     const menuAni = new Animation(plt, menu.getMenuElement());
-    menuAni.fromTo('translateX', closedX, openedX);
+    menuAni.fromTo('translateY', closedX, openedX);
     this.ani.add(menuAni);
 
     const backdropApi = new Animation(plt, menu.getBackdropElement());

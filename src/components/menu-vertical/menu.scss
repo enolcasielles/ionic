@@ -5,12 +5,13 @@
 
 /// @prop - Width of the menu
 $menu-width:                 304px !default;
+$menu-height:                80%;
 
 /// @prop - Width of the menu on small devices (under 340px)
 $menu-small-width:           $menu-width - 40px !default;
 
 
-ion-menu {
+ion-menu-vertical {
   @include position(0, 0, 0, 0);
 
   position: absolute;
@@ -20,32 +21,32 @@ ion-menu {
   contain: strict;
 }
 
-ion-menu.show-menu {
+ion-menu-vertical.show-menu {
   display: block;
 }
 
 
-.menu-inner {
-  @include position(0, auto, 0, 0);
+.menu-vertical-inner {
+  @include position(0, auto, initial, 0);
   @include transform(translate3d(-9999px, 0, 0));
 
   position: absolute;
 
   display: block;
 
-  width: $menu-width;
-  height: 100%;
+  width: 100%;
+  height: $menu-height;
 
   contain: strict;
 }
 
-.menu-inner > ion-header,
-.menu-inner > ion-content,
-.menu-inner > ion-footer {
+.menu-vertical-inner > ion-header,
+.menu-vertical-inner > ion-content,
+.menu-vertical-inner > ion-footer {
   position: absolute;
 }
 
-ion-menu[side=left] > .menu-inner {
+ion-menu-vertical[side=left] > .menu-vertical-inner {
   @include multi-dir() {
     // scss-lint:disable PropertySpelling
     right: auto;
@@ -53,7 +54,7 @@ ion-menu[side=left] > .menu-inner {
   }
 }
 
-ion-menu[side=right] > .menu-inner {
+ion-menu-vertical[side=right] > .menu-vertical-inner {
   @include multi-dir() {
     // scss-lint:disable PropertySpelling
     right: 0;
@@ -61,11 +62,11 @@ ion-menu[side=right] > .menu-inner {
   }
 }
 
-ion-menu[side=end] > .menu-inner {
+ion-menu-vertical[side=end] > .menu-vertical-inner {
   @include position-horizontal(auto, 0);
 }
 
-ion-menu ion-backdrop {
+ion-menu-vertical ion-backdrop {
   z-index: -1;
   display: none;
 
@@ -91,13 +92,6 @@ ion-menu ion-backdrop {
 }
 
 
-@media (max-width: 340px) {
-
-  .menu-inner {
-    width: $menu-small-width;
-  }
-
-}
 
 
 // Menu Reveal
@@ -105,11 +99,11 @@ ion-menu ion-backdrop {
 // The content slides over to reveal the menu underneath.
 // The menu itself, which is under the content, does not move.
 
-ion-menu[type=reveal] {
+ion-menu-vertical[type=reveal] {
   z-index: 0;
 }
 
-ion-menu[type=reveal].show-menu .menu-inner {
+ion-menu-vertical[type=reveal].show-menu .menu-vertical-inner {
   @include transform(translate3d(0, 0, 0));
 }
 
@@ -119,10 +113,10 @@ ion-menu[type=reveal].show-menu .menu-inner {
 // The menu slides over the content. The content
 // itself, which is under the menu, does not move.
 
-ion-menu[type=overlay] {
+ion-menu-vertical[type=overlay] {
   z-index: $z-index-menu-overlay;
 }
 
-ion-menu[type=overlay] .show-backdrop {
+ion-menu-vertical[type=overlay] .show-backdrop {
   display: block;
 }

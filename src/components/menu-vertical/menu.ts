@@ -182,18 +182,18 @@ import { RootNode } from '../split-pane/split-pane';
  * @see {@link ../../nav/NavController NavController API Docs}
  */
 @Component({
-  selector: 'ion-menu',
+  selector: 'ion-menu-vertical',
   template:
-    '<div class="menu-inner"><ng-content></ng-content></div>' +
+    '<div class="menu-vertical-inner"><ng-content></ng-content></div>' +
     '<ion-backdrop></ion-backdrop>',
   host: {
     'role': 'navigation'
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  providers: [{provide: RootNode, useExisting: forwardRef(() => Menu) }]
+  providers: [{provide: RootNode, useExisting: forwardRef(() => MenuVertical) }]
 })
-export class Menu implements RootNode, MenuInterface, OnInit, OnDestroy {
+export class MenuVertical implements RootNode, MenuInterface, OnInit, OnDestroy {
 
   private _cntEle: HTMLElement;
   private _gesture: MenuContentGesture;

@@ -50,6 +50,7 @@ export { LoadingController } from './components/loading/loading-controller';
 export { LoadingOptions } from './components/loading/loading-options';
 export { LoadingCmp } from './components/loading/loading-component';
 export { Menu } from './components/menu/menu';
+export { MenuVertical } from './components/menu-vertical/menu';
 export { MenuClose } from './components/menu/menu-close';
 export { MenuToggle } from './components/menu/menu-toggle';
 export { MenuType } from './components/menu/menu-types';
